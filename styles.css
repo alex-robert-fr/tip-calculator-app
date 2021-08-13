@@ -31,14 +31,16 @@ h3, p{
 /*logo*/
 [alt=logo]{
   position: relative;
+  top: 12vh;
   left: 50%;
   transform: translateX(-50%);
 }
 /*main*/
 main{
-  position: relative;
+  position: absolute;
+  top: 50%;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translate(-50%, -50%);
   background-color: var(--white);
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -145,8 +147,11 @@ main{
 
 /* attribution */
 .attribution {
+  position: absolute;
+  left: 50%;
+  bottom: 12vh;
+  transform: translateX(-50%);
   font-size: 11px;
-  text-align: center;
 }
 
 .attribution a {
