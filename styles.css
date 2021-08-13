@@ -98,6 +98,9 @@ main{
   text-align: right;
   border-radius: 5px;
 }
+.input > input::placeholder{
+  color: var(--light-dark-grayish-cyan);
+}
 /*result*/
 #result{
   background-color: var(--very-dark-cyan);
