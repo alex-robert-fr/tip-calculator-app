@@ -3,6 +3,7 @@
 /*general style*/
 :root{
   --primary-color: hsl(172, 67%, 45%);
+  --hover-color: hsl(165, 70%, 71%);
   --main-bg-color: hsl(185, 41%, 84%);
   --very-dark-cyan: hsl(183, 100%, 15%);
   --dark-grayish-cyan: hsl(186, 14%, 43%);
@@ -63,10 +64,9 @@ main{
   gap: 15px;
 }
 #tip-btns button{
+  cursor: pointer;
   font-size: 20px;
   font-weight: 700;
-}
-#tip-btns button{
   border: none;
   padding: 5px 0;
   border-radius: 5px;
@@ -78,6 +78,10 @@ main{
 #tip-btns #custom{
   background-color: var(--light-grayish-cyan);
   color: var(--dark-grayish-cyan);
+}
+#tip > #tip-btns > button:hover, #result button:hover{
+  color: var(--very-dark-cyan);
+  background-color: var(--hover-color);
 }
 /*input*/
 .input{
@@ -94,15 +98,19 @@ main{
   width: calc(100% - 30px);
   font-size: 24px;
   font-weight: 700;
-  color: var(--light-dark-grayish-cyan);
+  color: var(--very-dark-cyan);
   border: none;
   background-color: var(--light-grayish-cyan);
   padding-left: 30px;
   text-align: right;
   border-radius: 5px;
+  outline: none;
 }
 .input > input::placeholder{
   color: var(--light-dark-grayish-cyan);
+}
+.input > input:focus{
+  border: 2px solid var(--primary-color);
 }
 /*result*/
 #result{
