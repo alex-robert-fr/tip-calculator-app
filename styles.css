@@ -1,7 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
+
 /*general style*/
 :root{
   --main-bg-color: hsl(185, 41%, 84%);
   --very-dark-cyan: hsl(183, 100%, 15%);
+}
+*{
+  font-family: 'Space Mono';
 }
 body{
   background-color: var(--main-bg-color);
