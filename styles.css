@@ -4,6 +4,10 @@
 :root{
   --main-bg-color: hsl(185, 41%, 84%);
   --very-dark-cyan: hsl(183, 100%, 15%);
+  --dark-grayish-cyan: hsl(186, 14%, 43%);
+  --light-dark-grayish-cyan: hsl(184, 14%, 56%);
+  --light-grayish-cyan: hsl(189, 41%, 97%);
+  --white: hsl(0, 0%, 100%);
 }
 *{
   font-family: 'Space Mono';
@@ -34,7 +38,7 @@ main{
   position: relative;
   left: 50%;
   transform: translateX(-50%);
-  background-color: hsl(189, 41%, 97%);
+  background-color: var(--white);
   display: grid;
   grid-template-columns: 1fr 1fr;
   max-width: 1000px;
@@ -43,12 +47,35 @@ main{
 }
 /*calculation*/
 #calculation{
-  padding: 10px;
+  padding: 10px 40px 10px 10px;
 }
-#tip button{
+#calculation h3{
+  margin-bottom: 8px;
+}
+/*tip*/
+#tip-btns{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 15px;
+}
+#tip-btns button{
   font-size: 20px;
   font-weight: 700;
 }
+#tip-btns button{
+  border: none;
+  padding: 5px 0;
+  border-radius: 5px;
+}
+#tip-btns button:not(#custom){
+  background-color: var(--very-dark-cyan);
+  color: var(--white);
+}
+#tip-btns #custom{
+  background-color: var(--light-grayish-cyan);
+  color: var(--dark-grayish-cyan);
+}
+
 /*result*/
 #result{
   background-color: var(--very-dark-cyan);
