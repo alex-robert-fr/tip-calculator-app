@@ -1,3 +1,47 @@
+/*general style*/
+:root{
+  --main-bg-color: hsl(185, 41%, 84%);
+  --very-dark-cyan: hsl(183, 100%, 15%);
+}
+body{
+  background-color: var(--main-bg-color);
+}
+section:not(#people){
+  margin-bottom: 40px;
+}
+h3, p{
+  margin: 0px;
+}
+/*logo*/
+[alt=logo]{
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+/*main*/
+main{
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: hsl(189, 41%, 97%);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  max-width: 1000px;
+  border-radius: 20px;
+  padding: 30px;
+}
+/*calculation*/
+#calculation{
+  padding: 10px;
+}
+/*result*/
+#result{
+  background-color: var(--very-dark-cyan);
+  border-radius: 13px;
+  padding: 40px;
+}
+
+/* attribution */
 .attribution {
   font-size: 11px;
   text-align: center;
