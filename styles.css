@@ -51,6 +51,7 @@ main{
 }
 #calculation h3{
   margin-bottom: 8px;
+  color: var(--dark-grayish-cyan);
 }
 /*tip*/
 #tip-btns{
@@ -82,7 +83,7 @@ main{
 }
 .input > img{
   position: absolute;
-  left: 2%;
+  left: 3%;
   top: 50%;
   transform: translateY(-50%);
 }
@@ -95,12 +96,20 @@ main{
   background-color: var(--light-grayish-cyan);
   padding-left: 30px;
   text-align: right;
+  border-radius: 5px;
 }
 /*result*/
 #result{
   background-color: var(--very-dark-cyan);
   border-radius: 13px;
   padding: 40px;
+}
+#result h3{
+  color: var(--white);
+}
+#result p {
+  font-weight: 700;
+  color: var(--light-dark-grayish-cyan);
 }
 #result button{
   text-transform: uppercase;
