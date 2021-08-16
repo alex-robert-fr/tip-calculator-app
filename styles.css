@@ -4,7 +4,7 @@
 :root{
   --primary-color: hsl(172, 67%, 45%);
   --error-color: hsl(0, 59%, 61%);
-  --hover-color: hsl(165, 70%, 71%);
+  --hover-color: hsl(165, 46%, 69%);
   --main-bg-color: hsl(185, 41%, 84%);
   --very-dark-cyan: hsl(183, 100%, 15%);
   --dark-grayish-cyan: hsl(186, 14%, 43%);
@@ -89,6 +89,10 @@ main{
 #tip > #tip-btns > button:hover, #result button:hover{
   color: var(--very-dark-cyan);
   background-color: var(--hover-color);
+}
+#tip > #tip-btns > button.check{
+  color: var(--very-dark-cyan);
+  background-color: var(--primary-color);
 }
 /*input*/
 .input{

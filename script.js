@@ -2,6 +2,10 @@ const billInput = document.getElementsByName('bill')[0]
 const billError = document.querySelector('#bill > span.textError')
 const peopleInput = document.getElementsByName('people')[0]
 const peopleError = document.querySelector('#people > span.textError')
+const tip5 = {
+  btn: document.getElementsByName('5')[0],
+  activate: false
+}
 
 const fieldVerification = (input) => {
   const number = parseInt(input)
@@ -33,6 +37,17 @@ const field = (field, error) => {
     }
   })
 }
+
+tip5.btn.addEventListener('click', () => {
+  if (tip5.activate) {
+    tip5.btn.classList.remove('check')
+    tip5.activate = false
+  } else {
+    tip5.btn.classList.add('check')
+    tip5.activate = true
+  }
+  console.log(tip5.activate)
+})
 
 field(billInput, billError)
 field(peopleInput, peopleError)
