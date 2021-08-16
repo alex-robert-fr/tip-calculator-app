@@ -1,5 +1,7 @@
 const billInput = document.getElementsByName('bill')[0]
 const billError = document.querySelector('#bill > span.textError')
+const peopleInput = document.getElementsByName('people')[0]
+const peopleError = document.querySelector('#people > span.textError')
 
 const fieldVerification = (input) => {
   const number = parseInt(input)
@@ -14,23 +16,26 @@ const fieldVerification = (input) => {
       return [true, number]
     }
   } else {
-    console.log('test2')
     return parseInt(input)
   }
 }
+const field = (field, error) => {
+  field.addEventListener('input', (event) => {
+    const text = event.target.value
+    const verif = fieldVerification(text)
+    if (verif[0] === false) {
+      error.innerText = verif[2]
+      field.classList.add('error')
+      error.style.display = 'block'
+    } else {
+      field.classList.remove('error')
+      error.style.display = 'none'
+    }
+  })
+}
 
-billInput.addEventListener('input', (event) => {
-  const text = event.target.value
-  const verif = fieldVerification(text)
-  if (verif[0] === false) {
-    billError.innerText = verif[2]
-    billInput.classList.add('error')
-    billError.style.display = 'block'
-  } else {
-    billInput.classList.remove('error')
-    billError.style.display = 'none'
-  }
-})
+field(billInput, billError)
+field(peopleInput, peopleError)
 
 module.exports = {
   fieldVerification
