@@ -2,26 +2,16 @@ const billInput = document.getElementsByName('bill')[0]
 const billError = document.querySelector('#bill > span.textError')
 const peopleInput = document.getElementsByName('people')[0]
 const peopleError = document.querySelector('#people > span.textError')
-const tip5 = {
-  btn: document.getElementsByName('5')[0],
-  activate: false
-}
-const tip10 = {
-  btn: document.getElementsByName('10')[0],
-  activate: false
-}
-const tip15 = {
-  btn: document.getElementsByName('15')[0],
-  activate: false
-}
-const tip25 = {
-  btn: document.getElementsByName('25')[0],
-  activate: false
-}
-const tip50 = {
-  btn: document.getElementsByName('50')[0],
-  activate: false
-}
+const tip5 = document.getElementById('tip5')
+const tip10 = document.getElementById('tip10')
+const tip15 = document.getElementById('tip15')
+const tip25 = document.getElementById('tip25')
+const tip50 = document.getElementById('tip50')
+// const tip5 = document.getElementsByClassName('5')[0]
+// const tip10 = document.getElementsByClassName('10')[0]
+// const tip15 = document.getElementsByClassName('15')[0]
+// const tip25 = document.getElementsByClassName('25')[0]
+// const tip50 = document.getElementsByClassName('50')[0]
 
 const fieldVerification = (input) => {
   const number = parseInt(input)
@@ -53,16 +43,27 @@ const field = (field, error) => {
     }
   })
 }
+
 const tipClick = (tip) => {
-  tip.btn.addEventListener('click', () => {
-    if (tip.activate) {
-      tip.btn.classList.remove('check')
-      tip.activate = false
+  tip.addEventListener('click', () => {
+    console.log('Click !')
+    const id = tip.getAttribute('id')
+    const label = document.querySelector(`label[for=${id}]`)
+    console.log(label)
+    console.log(tip.checked)
+    if (tip.checked) {
+      console.log('Checked')
+      label.classList.add('check')
+      const tipAll = [tip5, tip10, tip15, tip25, tip50]
+      for (const unique of tipAll) {
+        const tipID = unique.getAttribute('id')
+        const tipLabel = document.querySelector(`label[for=${tipID}]`)
+        if (tipLabel !== label) {
+          tipLabel.classList.remove('check')
+        }
+      }
     } else {
-      tip.btn.classList.add('check')
-      tip.activate = true
     }
-    console.log(tip.activate)
   })
 }
 

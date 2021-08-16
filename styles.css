@@ -94,7 +94,7 @@ main{
   color: var(--very-dark-cyan);
   background-color: var(--hover-color);
 }
-#tip > #tip-btns > button.check{
+#tip > #tip-btns > label.check{
   color: var(--very-dark-cyan);
   background-color: var(--primary-color);
 }
