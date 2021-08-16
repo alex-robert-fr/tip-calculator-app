@@ -1,3 +1,5 @@
+const fs = require('fs')
+window.document.body.innerHTML = fs.readFileSync('./index.html')
 const app = require('../script')
 
 describe('Field verification', () => {
