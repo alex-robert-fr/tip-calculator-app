@@ -70,15 +70,19 @@ main{
   grid-template-columns: 1fr 1fr 1fr;
   gap: 15px;
 }
-#tip-btns button{
+[type=radio]{
+  display: none;
+}
+#tip-btns button, #tip-btns label{
   cursor: pointer;
   font-size: 20px;
   font-weight: 700;
   border: none;
   padding: 5px 0;
   border-radius: 5px;
+  text-align: center;
 }
-#tip-btns button:not(#custom){
+#tip-btns label{
   background-color: var(--very-dark-cyan);
   color: var(--white);
 }
@@ -86,7 +90,7 @@ main{
   background-color: var(--light-grayish-cyan);
   color: var(--dark-grayish-cyan);
 }
-#tip > #tip-btns > button:hover, #result button:hover{
+#tip > #tip-btns > button:hover, #result button:hover, #tip-btns label:hover{
   color: var(--very-dark-cyan);
   background-color: var(--hover-color);
 }
