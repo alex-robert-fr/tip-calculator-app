@@ -11,12 +11,12 @@ describe('Field verification', () => {
     expect(app.fieldVerification('Test')).toBeNaN()
   })
   it('Should return false if too big', () => {
-    expect(app.fieldVerification(10000000)).toStrictEqual([false, 10000000])
+    expect(app.fieldVerification(1000000000000)).toContain(false, 1000000000000)
   })
   it('Should return false if is negatif', () => {
-    expect(app.fieldVerification(-10)).toStrictEqual([false, -10])
+    expect(app.fieldVerification(-10)).toContain(false, -10)
   })
   it('Should return false if equal to 0', () => {
-    expect(app.fieldVerification(0)).toStrictEqual([false, 0])
+    expect(app.fieldVerification(0)).toContain(false, 0)
   })
 })
