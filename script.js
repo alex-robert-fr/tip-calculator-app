@@ -6,6 +6,22 @@ const tip5 = {
   btn: document.getElementsByName('5')[0],
   activate: false
 }
+const tip10 = {
+  btn: document.getElementsByName('10')[0],
+  activate: false
+}
+const tip15 = {
+  btn: document.getElementsByName('15')[0],
+  activate: false
+}
+const tip25 = {
+  btn: document.getElementsByName('25')[0],
+  activate: false
+}
+const tip50 = {
+  btn: document.getElementsByName('50')[0],
+  activate: false
+}
 
 const fieldVerification = (input) => {
   const number = parseInt(input)
@@ -37,20 +53,27 @@ const field = (field, error) => {
     }
   })
 }
-
-tip5.btn.addEventListener('click', () => {
-  if (tip5.activate) {
-    tip5.btn.classList.remove('check')
-    tip5.activate = false
-  } else {
-    tip5.btn.classList.add('check')
-    tip5.activate = true
-  }
-  console.log(tip5.activate)
-})
+const tipClick = (tip) => {
+  tip.btn.addEventListener('click', () => {
+    if (tip.activate) {
+      tip.btn.classList.remove('check')
+      tip.activate = false
+    } else {
+      tip.btn.classList.add('check')
+      tip.activate = true
+    }
+    console.log(tip.activate)
+  })
+}
 
 field(billInput, billError)
 field(peopleInput, peopleError)
+
+tipClick(tip5)
+tipClick(tip10)
+tipClick(tip15)
+tipClick(tip25)
+tipClick(tip50)
 
 module.exports = {
   fieldVerification
