@@ -2,7 +2,20 @@ const billInput = document.getElementsByName('bill')[0]
 const billError = document.querySelector('#bill > span.textError')
 
 const fieldVerification = (input) => {
-  return parseInt(input)
+  if (Number.isInteger(input)) {
+    let number = parseInt(input)
+    if (number > 1000000) {
+      return [false, number]
+    } else if (number < 0) {
+      return [false, number]
+    } else if (number === 0) {
+      return [false, number]
+    } else {
+      return [true, number]
+    }
+  } else {
+    return parseInt(input)
+  }
 }
 
 billInput.addEventListener('input', (event) => {

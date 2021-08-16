@@ -1,12 +1,22 @@
+const { expect } = require('@jest/globals')
 const fs = require('fs')
 window.document.body.innerHTML = fs.readFileSync('./index.html')
 const app = require('../script')
 
 describe('Field verification', () => {
-  it('Sould return number', () => {
+  it('Sould return good number', () => {
     expect(app.fieldVerification('1234')).not.toBeNaN()
   })
   it('Sould return NaN', () => {
     expect(app.fieldVerification('Test')).toBeNaN()
+  })
+  it('Should return false if too big', () => {
+    expect(app.fieldVerification(10000000)).toStrictEqual([false, 10000000])
+  })
+  it('Should return false if is negatif', () => {
+    expect(app.fieldVerification(-10)).toStrictEqual([false, -10])
+  })
+  it('Should return false if equal to 0', () => {
+    expect(app.fieldVerification(0)).toStrictEqual([false, 0])
   })
 })
